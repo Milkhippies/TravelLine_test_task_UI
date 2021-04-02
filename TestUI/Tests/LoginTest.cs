@@ -1,4 +1,6 @@
+using System;
 using NUnit.Framework;
+using OpenQA.Selenium;
 using TestUI.Pages;
 
 
@@ -31,9 +33,9 @@ namespace TestUI.Tests
             findSignUpButtonAndGo();
             checkCurrentLinkEqualReference(linkRegistration);
         }
-        
+
         [Test]
-        public void test_authorization_form()
+        public void test_correct_authorization()
         {
             openLink(linkLogin);
             writeMail(mail);
@@ -43,6 +45,15 @@ namespace TestUI.Tests
 
         }
         
+        [Test]
+        public void test_not_correct_authorization()
+        {
+            openLink(linkLogin);
+            writeMail(mail);
+            writePassword(password+"1");
+            signButton();
+            findBadAuthMessage();
+        }
         
     }
 }

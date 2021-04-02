@@ -32,7 +32,7 @@ namespace TestUI.Pages
         public void changeMetricToC()
         {
             var wait = new WebDriverWait(driver, TimeSpan.FromSeconds(15));
-            var metricСButton = wait.Until(ElementToBeClickable(By.XPath(MainLocators.METRIC_TO_C)));
+            var metricСButton = wait.Until(ElementIsVisible(By.XPath(MainLocators.METRIC_TO_C)));
             metricСButton.Click();
         }
         

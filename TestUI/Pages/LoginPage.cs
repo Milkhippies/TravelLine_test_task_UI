@@ -36,6 +36,12 @@ namespace TestUI.Pages
             signButton.Click();
         }
 
+        public void findBadAuthMessage()
+        {
+            var alertMessage = driver.FindElement(By.ClassName(LoginLocators.BAD_AUTH_ALERT));
+            Assert.That(alertMessage.Text.Contains("Invalid Email or password"));
+        }
+        
         public void checkCurrentLinkEqualReference(string link)
         {
             Assert.That(driver.Url == link,

@@ -9,6 +9,7 @@
             public const string USER_MAIL = "user_email";
             public const string USER_PASSWORD = "user_password";
             public const string SIGN_BUTTON = "commit";
+            public const string BAD_AUTH_ALERT = "panel-body";
         }
 
         public class MainLocators
