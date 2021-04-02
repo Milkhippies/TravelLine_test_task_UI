@@ -1,28 +1,31 @@
 ﻿using NUnit.Framework;
-using TestUI.pages;
+using TestUI.Pages;
 
 
 namespace TestUI.Tests
 {
-    public class ConvertingTest : MainPage
+    public class ConvertTest : MainPage
     {
         string linkMainPage = "https://openweathermap.org/";
 
+        public int tempC;
+        public int tempF;
+        
         [TestCase("Yoshkar-Ola")]
         [TestCase("London")]
         [TestCase("Moscow")]
         public void test_converter_temp_for_cities(string city)
         {
             openLink(linkMainPage);
-            enterCityName(city);
+            writeCity(city);
             clickSearchButton();
             clickOnCity();
             changeMetricToC();
-            getCelsius();
+            tempC = getTemperature("C");
             changeMetricToF();
-            getFahrenheit();
-            writeTempInConsole();
-            checkEqual();
+            tempF = getTemperature("F");
+            writeTempInConsole(tempC, tempF);
+            checkEqual(tempC, tempF);
         }
     }
 }

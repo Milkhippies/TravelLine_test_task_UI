@@ -1,5 +1,5 @@
 using NUnit.Framework;
-using TestUI.pages;
+using TestUI.Pages;
 
 
 namespace TestUI.Tests
