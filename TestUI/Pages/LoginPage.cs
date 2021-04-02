@@ -8,27 +8,32 @@ namespace TestUI.Pages
     {
         public void findSignButtonAndGo()
         {
-            driver.FindElement(By.Id(LoginLocators.SIGN_IN)).Click();
+            var signINButton = driver.FindElement(By.Id(LoginLocators.SIGN_IN));
+            signINButton.Click();
         }
 
         public void findSignUpButtonAndGo()
         {
-            driver.FindElement(By.LinkText(LoginLocators.SIGN_UP)).Click();
+            var signUPButton = driver.FindElement(By.LinkText(LoginLocators.SIGN_UP));
+            signUPButton.Click();
         }
 
         public void writeMail(string mail)
         {
-            driver.FindElement(By.Id(LoginLocators.USER_MAIL)).SendKeys(mail);
+            var mailField = driver.FindElement(By.Id(LoginLocators.USER_MAIL));
+            mailField.SendKeys(mail);
         }
 
         public void writePassword(string password)
         {
-            driver.FindElement(By.Id(LoginLocators.USER_PASSWORD)).SendKeys(password);
+            var passwordField = driver.FindElement(By.Id(LoginLocators.USER_PASSWORD));
+            passwordField.SendKeys(password);
         }
 
         public void signButton()
         {
-            driver.FindElement(By.Name(LoginLocators.SIGN_BUTTON)).Click();
+            var signButton = driver.FindElement(By.Name(LoginLocators.SIGN_BUTTON));
+            signButton.Click();
         }
 
         public void checkCurrentLinkEqualReference(string link)

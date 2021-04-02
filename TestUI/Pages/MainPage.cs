@@ -12,31 +12,28 @@ namespace TestUI.Pages
 
         public void writeCity(string city)
         {
-            driver.FindElement(By.XPath(MainLocators.WRITE_CITY)).SendKeys(city);
+            var cityField = driver.FindElement(By.XPath(MainLocators.WRITE_CITY));
+            cityField.SendKeys(city);
         }
         
         public void clickSearchButton()
         {
-            driver.FindElement(By.XPath(MainLocators.SEARCH_CITY_BUTTON)).Click();
+            var searchButton = driver.FindElement(By.XPath(MainLocators.SEARCH_CITY_BUTTON));
+            searchButton.Click();
         }
 
         public void clickOnCity()
         {
             var wait = new WebDriverWait(driver, TimeSpan.FromSeconds(15));
-            wait.Until(d => driver.FindElement(By.XPath(MainLocators.CLICK_CITY))).Click();
+            var chooseCity = wait.Until(d => driver.FindElement(By.XPath(MainLocators.CLICK_CITY)));
+            chooseCity.Click();
         }
 
         public void changeMetricToC()
         {
             var wait = new WebDriverWait(driver, TimeSpan.FromSeconds(15));
-            wait.Until(ElementToBeClickable(By.XPath(MainLocators.METRIC_TO_C))).Click();
-            
-            // wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementToBeClickable(
-            //     By.XPath("/html/body/main/div/div[1]/div/div/div[1]/div/div[2]/div/label[1]")));
-            
-            // var buttonToC = wait.Until(d =>
-            //    driver.FindElement(By.XPath(Locators.MainLocators.METRIC_TO_C)));
-            //buttonToC.Click();
+            var metricСButton = wait.Until(ElementToBeClickable(By.XPath(MainLocators.METRIC_TO_C)));
+            metricСButton.Click();
         }
         
         public int getTemperature(string degrees)
@@ -49,7 +46,8 @@ namespace TestUI.Pages
         
         public void changeMetricToF()
         {
-            driver.FindElement(By.XPath(MainLocators.METRIC_TO_F)).Click();
+            var metricFButton = driver.FindElement(By.XPath(MainLocators.METRIC_TO_F));
+            metricFButton.Click();
         }
 
         public void writeTempInConsole(int tempC, int tempF)
