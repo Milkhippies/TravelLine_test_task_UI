@@ -46,11 +46,21 @@ namespace TestUI.Tests
         }
         
         [Test]
-        public void test_not_correct_authorization()
+        public void test_incorrect_authorization_bad_password()
         {
             openLink(linkLogin);
             writeMail(mail);
             writePassword(password+"1");
+            signButton();
+            findBadAuthMessage();
+        }
+        
+        [Test]
+        public void test_incorrect_authorization_bad_email()
+        {
+            openLink(linkLogin);
+            writeMail(mail+"1");
+            writePassword(password);
             signButton();
             findBadAuthMessage();
         }

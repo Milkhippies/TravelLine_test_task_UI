@@ -53,9 +53,9 @@ namespace TestUI.Pages
         public void writeTempInConsole(int tempC, int tempF)
         {
             Console.WriteLine("На сайте в С°: " + tempC);
-            Console.WriteLine("При переводе с F° в C°: " + Utils.convertFtC(tempF));
+            Console.WriteLine("При переводе из F° в C°: " + Utils.convertFtC(tempF));
             Console.WriteLine("На сайте в F°: " + tempF);
-            Console.WriteLine("При переводе с C° в F°: " + Utils.convertCtF(tempC));
+            Console.WriteLine("При переводе из C° в F°: " + Utils.convertCtF(tempC));
         }
 
         public void checkEqual(int tempC, int tempF)
